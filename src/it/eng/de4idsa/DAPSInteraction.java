@@ -16,8 +16,7 @@ import java.time.Instant;
 import java.util.Base64;
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -32,7 +31,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class DAPSInteraction {
-    private static final Logger LOG = LoggerFactory.getLogger(DAPSInteraction.class);
+    private static final Logger LOG = Logger.getLogger(DAPSInteraction.class);
 
 	public DAPSInteraction() {}
 
