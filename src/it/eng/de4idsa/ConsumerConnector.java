@@ -92,6 +92,7 @@ public class ConsumerConnector {
 							LOG.debug("--validity impactOnRoadLayout="+situationRecord.getImpact().getImpactExtension().getImpactExtended().getImpactOnRoadLayout());
 							LOG.debug("--validity trackCrossSection="+situationRecord.getImpact().getImpactExtension().getImpactExtended().getTrackCrossSection());
 							LOG.debug("--validity temporarySpeedLimit="+situationRecord.getOperatorActionExtension().getOperatorActionExtended().getTemporarySpeedLimit());
+							LOG.debug("--validity internalRoadworksIdentifier="+situationRecord.getRoadworksExtension().getRoadworksExtended().getInternalRoadworksIdentifier());
 						}
 					}
 				}

@@ -29,7 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="actionOrigin" type="{http://datex2.eu/schema/2/2_0}OperatorActionOriginEnum" minOccurs="0"/>
  *         &lt;element name="actionPlanIdentifier" type="{http://datex2.eu/schema/2/2_0}String" minOccurs="0"/>
  *         &lt;element name="operatorActionStatus" type="{http://datex2.eu/schema/2/2_0}OperatorActionStatusEnum" minOccurs="0"/>
- *         &lt;element name="operatorActionExtension" type="{http://datex2.eu/schema/2/2_0}_ExtensionType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -42,8 +41,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "OperatorAction", propOrder = {
     "actionOrigin",
     "actionPlanIdentifier",
-    "operatorActionStatus",
-    "operatorActionExtension"
+    "operatorActionStatus"
 })
 @XmlSeeAlso({
     Roadworks.class,
@@ -58,7 +56,6 @@ public class OperatorAction
     protected OperatorActionOriginEnum actionOrigin;
     protected String actionPlanIdentifier;
     protected OperatorActionStatusEnum operatorActionStatus;
-    protected ExtensionType operatorActionExtension;
 
     /**
      * Gets the value of the actionOrigin property.
@@ -130,30 +127,6 @@ public class OperatorAction
      */
     public void setOperatorActionStatus(OperatorActionStatusEnum value) {
         this.operatorActionStatus = value;
-    }
-
-    /**
-     * Gets the value of the operatorActionExtension property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ExtensionType }
-     *     
-     */
-    public ExtensionType getOperatorActionExtension() {
-        return operatorActionExtension;
-    }
-
-    /**
-     * Sets the value of the operatorActionExtension property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ExtensionType }
-     *     
-     */
-    public void setOperatorActionExtension(ExtensionType value) {
-        this.operatorActionExtension = value;
     }
 
 }

@@ -50,6 +50,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="groupOfLocations" type="{http://datex2.eu/schema/2/2_0}GroupOfLocations"/>
  *         &lt;element name="management" type="{http://datex2.eu/schema/2/2_0}Management" minOccurs="0"/>
  *         &lt;element name="situationRecordExtension" type="{http://datex2.eu/schema/2/2_0}_ExtensionType" minOccurs="0"/>
+ *         &lt;element name="operatorActionExtension" type="{Engineering FIX} OperatorActionExtension" minOccurs="0"/>
+ *         &lt;element name="roadworksExtension" type="{Engineering Fix} RoadworksExtension" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="version" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -81,6 +83,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "management",
     "situationRecordExtension",
     "operatorActionExtension",
+    "roadworksExtension"
 })
 @XmlSeeAlso({
     GenericSituationRecord.class,
@@ -114,6 +117,7 @@ public abstract class SituationRecord {
     protected Management management;
     protected ExtensionType situationRecordExtension;
     protected OperatorActionExtension operatorActionExtension;
+    protected RoadworksExtension roadworksExtension;
     @XmlAttribute(name = "id", required = true)
     protected String id;
     @XmlAttribute(name = "version", required = true)
@@ -588,6 +592,30 @@ public abstract class SituationRecord {
      */
 	public void setOperatorActionExtension(OperatorActionExtension operatorActionExtension) {
 		this.operatorActionExtension = operatorActionExtension;
+	}
+
+	/**
+     * Gets the value of the roadworksExtension property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RoadworksExtension }
+     *     
+     */
+	public RoadworksExtension getRoadworksExtension() {
+		return roadworksExtension;
+	}
+
+	/**
+     * Sets the value of the roadworksExtension property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RoadworksExtension }
+     *     
+     */
+	public void setRoadworksExtension(RoadworksExtension roadworksExtension) {
+		this.roadworksExtension = roadworksExtension;
 	}
 
 	/**

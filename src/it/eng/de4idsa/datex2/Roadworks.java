@@ -33,7 +33,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="mobility" type="{http://datex2.eu/schema/2/2_0}Mobility" minOccurs="0"/>
  *         &lt;element name="subjects" type="{http://datex2.eu/schema/2/2_0}Subjects" minOccurs="0"/>
  *         &lt;element name="maintenanceVehicles" type="{http://datex2.eu/schema/2/2_0}MaintenanceVehicles" minOccurs="0"/>
- *         &lt;element name="roadworksExtension" type="{http://datex2.eu/schema/2/2_0}_ExtensionType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -50,8 +49,7 @@ import javax.xml.bind.annotation.XmlType;
     "urgentRoadworks",
     "mobility",
     "subjects",
-    "maintenanceVehicles",
-    "roadworksExtension"
+    "maintenanceVehicles"
 })
 @XmlSeeAlso({
     MaintenanceWorks.class,
@@ -68,7 +66,6 @@ public abstract class Roadworks
     protected Mobility mobility;
     protected Subjects subjects;
     protected MaintenanceVehicles maintenanceVehicles;
-    protected ExtensionType roadworksExtension;
 
     /**
      * Gets the value of the roadworksDuration property.
@@ -236,30 +233,6 @@ public abstract class Roadworks
      */
     public void setMaintenanceVehicles(MaintenanceVehicles value) {
         this.maintenanceVehicles = value;
-    }
-
-    /**
-     * Gets the value of the roadworksExtension property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ExtensionType }
-     *     
-     */
-    public ExtensionType getRoadworksExtension() {
-        return roadworksExtension;
-    }
-
-    /**
-     * Sets the value of the roadworksExtension property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ExtensionType }
-     *     
-     */
-    public void setRoadworksExtension(ExtensionType value) {
-        this.roadworksExtension = value;
     }
 
 }
