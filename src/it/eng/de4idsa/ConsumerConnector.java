@@ -90,7 +90,8 @@ public class ConsumerConnector {
 						if (situationRecord.getImpact()!=null) {
 							LOG.debug("--impact constriction type="+situationRecord.getImpact().getTrafficConstrictionType());
 							LOG.debug("--validity impactOnRoadLayout="+situationRecord.getImpact().getImpactExtension().getImpactExtended().getImpactOnRoadLayout());
-							LOG.debug("--validity trackCrossSection="+situationRecord.getImpact().getImpactExtension().getImpactExtended().getTrackCrossSection());	
+							LOG.debug("--validity trackCrossSection="+situationRecord.getImpact().getImpactExtension().getImpactExtended().getTrackCrossSection());
+							LOG.debug("--validity temporarySpeedLimit="+situationRecord.getOperatorActionExtension().getOperatorActionExtended().getTemporarySpeedLimit());
 						}
 					}
 				}

@@ -79,7 +79,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "urlLink",
     "groupOfLocations",
     "management",
-    "situationRecordExtension"
+    "situationRecordExtension",
+    "operatorActionExtension",
 })
 @XmlSeeAlso({
     GenericSituationRecord.class,
@@ -112,6 +113,7 @@ public abstract class SituationRecord {
     protected GroupOfLocations groupOfLocations;
     protected Management management;
     protected ExtensionType situationRecordExtension;
+    protected OperatorActionExtension operatorActionExtension;
     @XmlAttribute(name = "id", required = true)
     protected String id;
     @XmlAttribute(name = "version", required = true)
@@ -563,8 +565,32 @@ public abstract class SituationRecord {
     public void setSituationRecordExtension(ExtensionType value) {
         this.situationRecordExtension = value;
     }
+    
+    /**
+     * Gets the value of the operatorActionExtension property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OperatorActionExtension }
+     *     
+     */
+    public OperatorActionExtension getOperatorActionExtension() {
+		return operatorActionExtension;
+	}
 
     /**
+     * Sets the value of the operatorActionExtension property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OperatorActionExtension }
+     *     
+     */
+	public void setOperatorActionExtension(OperatorActionExtension operatorActionExtension) {
+		this.operatorActionExtension = operatorActionExtension;
+	}
+
+	/**
      * Gets the value of the id property.
      * 
      * @return
