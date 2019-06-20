@@ -14,13 +14,11 @@ import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 
 import org.apache.log4j.Logger;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import de.fraunhofer.iais.eis.ArtifactResponseMessage;
 import it.eng.de4idsa.datex2.D2LogicalModel;
-import it.eng.de4idsa.datex2.ExtensionType;
 import it.eng.de4idsa.datex2.PayloadPublication;
 import it.eng.de4idsa.datex2.Situation;
 import it.eng.de4idsa.datex2.SituationPublication;
@@ -75,9 +73,9 @@ public class ConsumerConnector {
 				}
 			});
 			LOG.debug("handler2="+um.getEventHandler().toString());
-			um.setSchema(null);
-			Source source = new StreamSource(new StringReader(data));
-
+			um.setSchema(null);	
+			Source source = new StreamSource(new StringReader(data));		
+			
 			JAXBElement<D2LogicalModel> root = um.unmarshal (source, D2LogicalModel.class);
 			D2LogicalModel d2LogicalModel = root.getValue();
 			LOG.debug("payload public lang="+d2LogicalModel.getPayloadPublication().getLang());
@@ -91,14 +89,8 @@ public class ConsumerConnector {
 						LOG.debug("--validity end="+situationRecord.getValidity().getValidityTimeSpecification().getOverallEndTime());
 						if (situationRecord.getImpact()!=null) {
 							LOG.debug("--impact constriction type="+situationRecord.getImpact().getTrafficConstrictionType());
-							for (Element element:situationRecord.getImpact().getImpactExtension().getAny()) {
-								LOG.debug("element="+element.toString());
-								getNodeIfExist(element, 0);
-								ExtensionType ext = situationRecord.getSituationRecordExtension();
-								if (situationRecord.getSituationRecordExtension()!=null)
-									LOG.debug("--getSituationRecordExtension="+ext.getAny().toString());
-							}
-
+							LOG.debug("--validity impactOnRoadLayout="+situationRecord.getImpact().getImpactExtension().getImpactExtended().getImpactOnRoadLayout());
+							LOG.debug("--validity trackCrossSection="+situationRecord.getImpact().getImpactExtension().getImpactExtended().getTrackCrossSection());	
 						}
 					}
 				}
@@ -113,6 +105,7 @@ public class ConsumerConnector {
 			 */
 			ActiveMQConnector activeMQConnector=new ActiveMQConnector();
 			//activeMQConnector.sendMessage(topicName, artifactResponseMessage.get);
+			
 		}
 		catch(Exception e) {
 			e.printStackTrace();

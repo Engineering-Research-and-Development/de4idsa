@@ -975,6 +975,14 @@ public class ObjectFactory {
     public ImpactExtensionType createImpactExtensionType() {
         return new ImpactExtensionType();
     }
+    
+    /**
+     * Create an instance of {@link ImpactExtended }
+     * 
+     */
+    public ImpactExtended createImpactExtended() {
+        return new ImpactExtended();
+    }
 
     /**
      * Create an instance of {@link Humidity }

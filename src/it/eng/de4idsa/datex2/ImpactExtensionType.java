@@ -10,12 +10,10 @@ package it.eng.de4idsa.datex2;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlType;
-
 import org.w3c.dom.Element;
 
 
@@ -42,13 +40,14 @@ import org.w3c.dom.Element;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "_ImpactExtensionType", propOrder = {
     "impactDetails",
-    "any"
+    "impactExtended"
 })
 public class ImpactExtensionType {
 
     protected ImpactDetails impactDetails;
-    @XmlAnyElement(lax = true)
-    protected List<org.w3c.dom.Element> any;
+//    @XmlAnyElement(lax = true)
+//    protected List<Object> any;
+      ImpactExtended impactExtended;
 
     /**
      * Gets the value of the impactDetails property.
@@ -97,11 +96,19 @@ public class ImpactExtensionType {
      * 
      * 
      */
-    public List<org.w3c.dom.Element> getAny() {
-        if (any == null) {
-            any = new ArrayList<org.w3c.dom.Element>();
-        }
-        return this.any;
-    }
+//    public List<Object> getAny() {
+//        if (any == null) {
+//            any = new ArrayList<Object>();
+//        }
+//        return this.any;
+//    }
+    
+    public ImpactExtended getImpactExtended() {
+		return impactExtended;
+	}
 
+	public void setImpactExtended(ImpactExtended impactExtended) {
+		this.impactExtended = impactExtended;
+	}
+    
 }
