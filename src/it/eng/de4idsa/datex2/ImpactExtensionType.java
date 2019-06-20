@@ -18,7 +18,7 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for _ImpactExtensionType complex type.
+ * <p>Java class for _ImpactExtensionType is adapted Engineering FIX.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
@@ -28,7 +28,7 @@ import org.w3c.dom.Element;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="impactDetails" type="{http://datex2.eu/schema/2/2_0}ImpactDetails" minOccurs="0"/>
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="impactExtended" type="{Engineering Fix} ImpactExtended" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -45,9 +45,7 @@ import org.w3c.dom.Element;
 public class ImpactExtensionType {
 
     protected ImpactDetails impactDetails;
-//    @XmlAnyElement(lax = true)
-//    protected List<Object> any;
-      ImpactExtended impactExtended;
+    protected ImpactExtended impactExtended;
 
     /**
      * Gets the value of the impactDetails property.
@@ -74,39 +72,25 @@ public class ImpactExtensionType {
     }
 
     /**
-     * Gets the value of the any property.
+     * Gets the value of the impactExtended property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAny().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Object }
-     * {@link Element }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link ImpactExtended }
+     *     
      */
-//    public List<Object> getAny() {
-//        if (any == null) {
-//            any = new ArrayList<Object>();
-//        }
-//        return this.any;
-//    }
-    
     public ImpactExtended getImpactExtended() {
 		return impactExtended;
 	}
 
+    /**
+     * Sets the value of the impactExtended property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ImpactExtended }
+     *     
+     */
 	public void setImpactExtended(ImpactExtended impactExtended) {
 		this.impactExtended = impactExtended;
 	}
